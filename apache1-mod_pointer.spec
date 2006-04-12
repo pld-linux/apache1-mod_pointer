@@ -6,11 +6,12 @@
 Summary:	Apache module for making domain redirects
 Name:		apache1-mod_%{mod_name}
 Version:	0.8
-Release:	0.1
+Release:	0.6
 License:	Apache
 Group:		Networking/Daemons
 Source0:	http://stderr.net/mod_pointer/dist/mod_pointer-%{version}.tar.gz
 # Source0-md5:	2f6529c49f1d10ecd06d3f6bc8503a5f
+Patch0:		apache1-mod_pointer-mysql.patch
 URL:		http://stderr.net/mod_pointer/
 BuildRequires:	apache1-devel >= 1.3.33-2
 BuildRequires:	gdbm-devel
@@ -34,6 +35,7 @@ build a webbased interface for letting users change it on their own.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
+%patch0 -p1
 
 %build
 %{__make} all \
@@ -59,6 +61,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc README CHANGES
+%doc README CHANGES SUPPORT TODO frameset.html *.sql *.readme pointer.conf
 #%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conf.d/*_mod_%{mod_name}.conf
 %attr(755,root,root) %{_pkglibdir}/*

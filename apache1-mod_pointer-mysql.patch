@@ -1,0 +1,22 @@
+mod_real_query() is for binary data. and using MAX_QUERY_LENGTH will also pass
+uninitialized buffer to mysql server which will result syntax error
+
+so should pass there strlen(query) instead, but lets rather use mysql_query()
+which will use \0 terminated string.
+
+also the patch includes query into apache error log if the query failed.
+
+--- mod_pointer-0.8/mod_my_pointer.c	2002-06-18 18:33:13.000000000 +0300
++++ mod_pointer-0.8-mysql/mod_my_pointer.c	2006-04-12 20:14:39.662876705 +0300
+@@ -395,9 +395,9 @@
+                 cfg->mysqlurlfield, cfg->mysqlframefield, cfg->mysqltitlefield,
+                 cfg->mysqlpassargsfield, cfg->mysqlptrtable, cfg->mysqlhostfield, pointer_host);
+ 
+-    if (mysql_real_query(mysql_handle, query, MAX_QUERY_LENGTH) != 0) {
++    if (mysql_query(mysql_handle, query) != 0) {
+         ap_log_error (APLOG_MARK, APLOG_ERR, r->server,
+-                      "[mod_pointer]: MySQL error %s: %s", mysql_error(mysql_handle), r->uri);
++                      "[mod_pointer]: MySQL error %s: %s: [%s]", mysql_error(mysql_handle), r->uri, query);
+         return SERVER_ERROR;
+     }
+ 

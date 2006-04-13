@@ -13,7 +13,7 @@ Source0:	http://stderr.net/mod_pointer/dist/mod_pointer-%{version}.tar.gz
 # Source0-md5:	2f6529c49f1d10ecd06d3f6bc8503a5f
 Patch0:		apache1-mod_pointer-mysql.patch
 URL:		http://stderr.net/mod_pointer/
-BuildRequires:	apache1-devel >= 1.3.33-2
+BuildRequires:	apache1-devel >= 1.3.34-8.5
 BuildRequires:	gdbm-devel
 BuildRequires:	mysql-devel
 BuildRequires:	postgresql-devel

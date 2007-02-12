@@ -4,7 +4,7 @@
 %define		mod_name	pointer
 %define 	apxs		%{_sbindir}/apxs1
 Summary:	Apache module for making domain redirects
-Summary(pl):	Modu³ Apache'a do tworzenia przekierowañ domen
+Summary(pl.UTF-8):   ModuÅ‚ Apache'a do tworzenia przekierowaÅ„ domen
 Name:		apache1-mod_%{mod_name}
 Version:	0.8
 Release:	0.6
@@ -34,15 +34,15 @@ The configuration part of the mappings are handled in either a MySQL
 or PostgreSQL database or a NDBM or SDBM db file, so it's easy to
 build a webbased interface for letting users change it on their own.
 
-%description -l pl
-mod_pointer to modu³ Apache'a do ³atwego tworzenia przekierowañ domen
-- znanej us³ugi wielu providerów pozwalaj±cej domenie wskazywaæ na
-stronê na innym serwerze.
+%description -l pl.UTF-8
+mod_pointer to moduÅ‚ Apache'a do Å‚atwego tworzenia przekierowaÅ„ domen
+- znanej usÅ‚ugi wielu providerÃ³w pozwalajÄ…cej domenie wskazywaÄ‡ na
+stronÄ™ na innym serwerze.
 
-Czê¶æ konfiguracyjna odwzorowañ jest obs³ugiwana poprzez bazê danych
-MySQL lub PostgreSQL albo plik bazy danych NDBM lub SDBM, wiêc ³atwo
-stworzyæ oparty na WWW interfejs umo¿liwiaj±cy u¿ytkownikom
-samodzieln± zmianê przekierowañ.
+CzÄ™Å›Ä‡ konfiguracyjna odwzorowaÅ„ jest obsÅ‚ugiwana poprzez bazÄ™ danych
+MySQL lub PostgreSQL albo plik bazy danych NDBM lub SDBM, wiÄ™c Å‚atwo
+stworzyÄ‡ oparty na WWW interfejs umoÅ¼liwiajÄ…cy uÅ¼ytkownikom
+samodzielnÄ… zmianÄ™ przekierowaÅ„.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}

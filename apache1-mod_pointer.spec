@@ -4,7 +4,7 @@
 %define		mod_name	pointer
 %define 	apxs		%{_sbindir}/apxs1
 Summary:	Apache module for making domain redirects
-Summary(pl.UTF-8):   Moduł Apache'a do tworzenia przekierowań domen
+Summary(pl.UTF-8):	Moduł Apache'a do tworzenia przekierowań domen
 Name:		apache1-mod_%{mod_name}
 Version:	0.8
 Release:	0.6

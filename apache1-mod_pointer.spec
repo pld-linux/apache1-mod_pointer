@@ -6,7 +6,7 @@ Summary:	Apache module for making domain redirects
 Summary(pl.UTF-8):	Moduł Apache'a do tworzenia przekierowań domen
 Name:		apache1-mod_%{mod_name}
 Version:	0.8
-Release:	0.7
+Release:	0.8
 License:	Apache
 Group:		Networking/Daemons
 Source0:	http://stderr.net/mod_pointer/dist/mod_pointer-%{version}.tar.gz
@@ -19,7 +19,7 @@ BuildRequires:	gdbm-devel
 BuildRequires:	mysql-devel
 BuildRequires:	postgresql-devel
 BuildRequires:	rpmbuild(macros) >= 1.268
-Requires:	apache1 >= 1.3.33-2
+Requires:	apache1(EAPI)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_pkglibdir	%(%{apxs} -q LIBEXECDIR 2>/dev/null)
